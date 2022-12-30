@@ -94,9 +94,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   };
   popupFun(dish, popupBg, img);
-  popupFun(dish, popupBg, img);
-  popupFun(dish, popupBg, img);
-  popupFun(dish, popupBg, img);
 
   /* Burger */
   const burgerFun = () => {
