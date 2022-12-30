@@ -1074,17 +1074,8 @@ a {
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+  opacity: 0.8;
   display: block;
-}
-.daily-special__slide::after {
-  position: absolute;
-  content: "";
-  z-index: 2;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.2);
 }
 .daily-special__belonging {
   position: absolute;
