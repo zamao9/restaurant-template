@@ -74,7 +74,7 @@ abbr[title] {
   border-bottom: none; /* 1 */
   text-decoration: underline; /* 2 */
   -webkit-text-decoration: underline dotted;
-          text-decoration: underline dotted; /* 2 */
+  text-decoration: underline dotted; /* 2 */
 }
 
 /**
@@ -173,9 +173,9 @@ select {
  * Correct the inability to style clickable types in iOS and Safari.
  */
 button,
-[type=button],
-[type=reset],
-[type=submit] {
+[type="button"],
+[type="reset"],
+[type="submit"] {
   -webkit-appearance: button;
 }
 
@@ -183,9 +183,9 @@ button,
  * Remove the inner border and padding in Firefox.
  */
 button::-moz-focus-inner,
-[type=button]::-moz-focus-inner,
-[type=reset]::-moz-focus-inner,
-[type=submit]::-moz-focus-inner {
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
   border-style: none;
   padding: 0;
 }
@@ -194,9 +194,9 @@ button::-moz-focus-inner,
  * Restore the focus styles unset by the previous rule.
  */
 button:-moz-focusring,
-[type=button]:-moz-focusring,
-[type=reset]:-moz-focusring,
-[type=submit]:-moz-focusring {
+[type="button"]:-moz-focusring,
+[type="reset"]:-moz-focusring,
+[type="submit"]:-moz-focusring {
   outline: 1px dotted ButtonText;
 }
 
@@ -240,8 +240,8 @@ textarea {
  * 1. Add the correct box sizing in IE 10.
  * 2. Remove the padding in IE 10.
  */
-[type=checkbox],
-[type=radio] {
+[type="checkbox"],
+[type="radio"] {
   box-sizing: border-box; /* 1 */
   padding: 0; /* 2 */
 }
@@ -249,8 +249,8 @@ textarea {
 /**
  * Correct the cursor style of increment and decrement buttons in Chrome.
  */
-[type=number]::-webkit-inner-spin-button,
-[type=number]::-webkit-outer-spin-button {
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
   height: auto;
 }
 
@@ -258,7 +258,7 @@ textarea {
  * 1. Correct the odd appearance in Chrome and Safari.
  * 2. Correct the outline style in Safari.
  */
-[type=search] {
+[type="search"] {
   -webkit-appearance: textfield; /* 1 */
   outline-offset: -2px; /* 2 */
 }
@@ -266,7 +266,7 @@ textarea {
 /**
  * Remove the inner padding in Chrome and Safari on macOS.
  */
-[type=search]::-webkit-search-decoration {
+[type="search"]::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -449,7 +449,10 @@ table {
   font-family: "Montserrat";
   font-display: swap;
   src: url("../fonts/Montserrat-ExtraLight.eot");
-  src: url("../fonts/Montserrat-ExtraLight.eot?#iefix") format("embedded-opentype"), url("../fonts/Montserrat-ExtraLight.woff") format("woff"), url("../fonts/Montserrat-ExtraLight.ttf") format("truetype");
+  src: url("../fonts/Montserrat-ExtraLight.eot?#iefix")
+      format("embedded-opentype"),
+    url("../fonts/Montserrat-ExtraLight.woff") format("woff"),
+    url("../fonts/Montserrat-ExtraLight.ttf") format("truetype");
   font-weight: 200;
   font-style: normal;
 }
@@ -457,7 +460,9 @@ table {
   font-family: "Montserrat";
   font-display: swap;
   src: url("../fonts/Montserrat-Light.eot");
-  src: url("../fonts/Montserrat-Light.eot?#iefix") format("embedded-opentype"), url("../fonts/Montserrat-Light.woff") format("woff"), url("../fonts/Montserrat-Light.ttf") format("truetype");
+  src: url("../fonts/Montserrat-Light.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/Montserrat-Light.woff") format("woff"),
+    url("../fonts/Montserrat-Light.ttf") format("truetype");
   font-weight: 300;
   font-style: normal;
 }
@@ -465,7 +470,9 @@ table {
   font-family: "Montserrat";
   font-display: swap;
   src: url("../fonts/Montserrat-Regular.eot");
-  src: url("../fonts/Montserrat-Regular.eot?#iefix") format("embedded-opentype"), url("../fonts/Montserrat-Regular.woff") format("woff"), url("../fonts/Montserrat-Regular.ttf") format("truetype");
+  src: url("../fonts/Montserrat-Regular.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/Montserrat-Regular.woff") format("woff"),
+    url("../fonts/Montserrat-Regular.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
 }
@@ -473,7 +480,9 @@ table {
   font-family: "ProstoOne";
   font-display: swap;
   src: url("../fonts/ProstoOne-Regular.eot");
-  src: url("../fonts/ProstoOne-Regular.eot?#iefix") format("embedded-opentype"), url("../fonts/ProstoOne-Regular.woff") format("woff"), url("../fonts/ProstoOne-Regular.ttf") format("truetype");
+  src: url("../fonts/ProstoOne-Regular.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/ProstoOne-Regular.woff") format("woff"),
+    url("../fonts/ProstoOne-Regular.ttf") format("truetype");
   font-weight: 700;
   font-style: normal;
 }
@@ -548,7 +557,8 @@ a {
 }
 .header__head.active {
   background: #101216;
-  box-shadow: 0 0 2px #46464f inset, 0 0 4px #46464f inset, 0 0 6px #46464f inset;
+  box-shadow: 0 0 2px #46464f inset, 0 0 4px #46464f inset,
+    0 0 6px #46464f inset;
 }
 .header__content {
   max-width: 560px;
@@ -660,7 +670,7 @@ a {
   background-color: rgba(255, 255, 255, 0.9);
 }
 
-/* NAV */		
+/* NAV */
 .nav {
   width: 80%;
   height: 100vh;
@@ -675,7 +685,8 @@ a {
   pointer-events: none;
   transition: 0.4s ease;
   background-color: #101216;
-  box-shadow: 0 0 2px #46464f inset, 0 0 4px #46464f inset, 0 0 6px #46464f inset;
+  box-shadow: 0 0 2px #46464f inset, 0 0 4px #46464f inset,
+    0 0 6px #46464f inset;
 }
 .nav.active {
   right: 0;
@@ -748,9 +759,9 @@ a {
   width: 150px;
   font-size: 15px;
   -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
   color: #fff;
   text-transform: capitalize;
   text-align: right;
@@ -864,14 +875,15 @@ a {
   letter-spacing: 5px;
   cursor: pointer;
   -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
   transition: 0.2s ease;
   background-color: rgba(15, 17, 21, 0.5019607843);
   backdrop-filter: blur(3px);
   -webkit-backdrop-filter: blur(3px);
-  box-shadow: 0 0 2px #46464f inset, 0 0 4px #46464f inset, 0 0 6px #46464f inset;
+  box-shadow: 0 0 2px #46464f inset, 0 0 4px #46464f inset,
+    0 0 6px #46464f inset;
   border-radius: 5px;
   margin: 0 30px 0 0;
 }
@@ -879,7 +891,8 @@ a {
 .swiper-btns .swiper-button-next:hover {
   background-color: rgba(255, 255, 255, 0.5019607843);
 }
-.swiper-btns .swiper-button-prev::after, .swiper-btns .swiper-button-prev ::before,
+.swiper-btns .swiper-button-prev::after,
+.swiper-btns .swiper-button-prev ::before,
 .swiper-btns .swiper-button-next::after,
 .swiper-btns .swiper-button-next ::before {
   content: none;
@@ -910,7 +923,7 @@ a {
   box-shadow: 0 0 3px rgba(255, 255, 255, 0.9) !important;
 }
 
-/* Menu */	
+/* Menu */
 .menu__swiper {
   overflow: hidden;
 }
@@ -987,7 +1000,7 @@ a {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   display: block;
 }
 .menu__image::after {
@@ -1053,9 +1066,9 @@ a {
 /* Daily Special */
 .daily-special {
   -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 .daily-special__text {
   margin-bottom: 30px;
@@ -1073,7 +1086,7 @@ a {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   opacity: 0.8;
   display: block;
 }
@@ -1328,4 +1341,4 @@ a {
   .daily-special {
     max-width: 100%;
   }
-}/*# sourceMappingURL=style.css.map */
+} /*# sourceMappingURL=style.css.map */
