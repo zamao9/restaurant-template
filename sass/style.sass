@@ -1,0 +1,926 @@
+@import "normalize.scss"
+@import "reset.scss"
+@import "fonts.scss"
+
+$defaultColor: rgba(255, 255, 255, 0.9)
+$backgroundColor: #101216
+$navHover: #656572
+$boxShadow: #46464f
+$fontMont: "Montserrat", sans-serif
+$fontProst: "ProstoOne", serif
+
+body 
+	font-family: $fontMont
+	font-size: 14px
+	color: $defaultColor
+	font-weight: 300
+	line-height: 1.6
+
+	&.block 
+		overflow: hidden
+
+a 
+	text-decoration: none	
+	color: inherit	
+
+.background 
+	width: 100%
+	height: 110vh
+
+	position: fixed
+	z-index: 18
+
+	opacity: 0
+	pointer-events: none
+	transition: 0.4s ease
+
+	background-color: rgba(0, 0, 0, 0.5)
+	backdrop-filter: blur(3px)	
+	-webkit-backdrop-filter: blur(3px)	
+	&.active
+		opacity: 1
+		pointer-events: all
+		
+
+
+/* Header */
+.header 
+	width: 100%
+	height: 100vh
+
+	display: flex
+	justify-content: center
+	align-items: center
+
+	padding: 0 !important
+	background: url(../img/background.webp) center / cover no-repeat
+	&::after
+		width: 100%
+		height: 100%
+		position: absolute
+		top: 0
+		left: 0
+		content: ''
+
+		background-color: rgba(0, 0, 0, 0.7)
+	
+	&__offer
+		position: relative
+		z-index: 2
+
+		font-size: 30px
+		font-weight: 400
+		font-family: "ProstoOne", sans-serif
+		text-align: center
+
+		padding: 0 15px
+
+	&__head
+		width: 100%
+
+		position: fixed
+		top: 0
+		left: 0
+		z-index: 15
+
+		transition: 0.2s ease
+		&.active
+			background: $backgroundColor
+			box-shadow: 0 0 2px $boxShadow inset, 0 0 4px $boxShadow inset, 0 0 6px $boxShadow inset
+
+
+	&__content
+		max-width: 560px
+			
+		display: flex
+		justify-content: space-between
+
+		padding: 15px
+		margin:  0 auto
+
+	&__logo
+		font-size: 20px
+		font-weight: 700
+		font-family: $fontProst
+		line-height: 1.6
+
+		transition: 0.2s ease
+		&:hover
+			opacity: 0.5
+
+	&__burger
+		width: 30px
+		height: 30px
+
+		position: fixed
+		z-index: 30
+		right: 15px
+		top: 15px
+
+		display: flex
+		justify-content: center
+		align-items: center
+
+	&__item-inactive 
+		width: 80%
+		height: 2px
+
+		position: relative
+
+		transition: 0.4s ease
+		background-color: $defaultColor
+		&.active 
+			background: none
+		&.active::before
+			transform: translateX(-100%)
+			opacity: 0
+		&::before
+			position: absolute
+			content: ''
+
+			width: 100%
+			height: 100%
+
+			transition: 0.4s ease
+			top: 8px
+			background-color: $defaultColor			
+		&.active::after
+			transform: translateX(100%)
+			opacity: 0
+		&::after
+			position: absolute
+			content: ''
+
+			width: 100%
+			height: 100%
+
+			transition: 0.4s ease
+			bottom: 8px
+			background-color: $defaultColor		
+
+
+	&__item-active 
+		position: absolute
+		width: 80%
+		height: 2px
+		top: 50%
+		left: 50%
+		transform: translate(-50%, -50%)
+		&.active::before
+			left: 50%
+			top: 50%
+			transform: translate(-50%, -50%) rotate(45deg)
+			opacity: 1
+		&::before
+			position: absolute
+			content: ''
+			left: 0
+			top: 0
+			transform: translate(-100%, -25px) rotate(45deg)
+
+			width: 100%
+			height: 100%
+
+			opacity: 0
+			transition: 0.4s ease
+			background-color: $defaultColor			
+		&.active::after
+			left: 50%
+			top: 50%
+			transform: translate(-50%, -50%) rotate(-45deg)
+			opacity: 1
+		&::after
+			position: absolute
+			content: ''
+			left: 0
+			top: 0
+			transform: translate(100%, -25px) rotate(-45deg)
+
+			width: 100%
+			height: 100%
+
+			opacity: 0
+			transition: 0.4s ease
+			bottom: 8px
+			background-color: $defaultColor						
+
+
+
+/* NAV */		
+.nav
+	width: 80%
+	height: 100vh
+
+	display: flex
+	justify-content: center
+	align-items: center
+
+	position: fixed
+	z-index: 20
+	right: -80%
+	top: 0
+
+	opacity: 0
+	pointer-events: none
+	transition: 0.4s ease
+	background-color: $backgroundColor
+	box-shadow: 0 0 2px $boxShadow inset, 0 0 4px $boxShadow inset, 0 0 6px $boxShadow inset
+	&.active
+		right: 0
+		opacity: 1
+		pointer-events: all
+	& ul 
+		width: 100%
+
+	&__link 
+		width: 100%
+		display: block
+
+		transition: 0.2s ease
+		text-transform: capitalize
+		font-size: 18px	
+		padding: 10px 0
+		text-align: center
+		&.active	
+			background-color: $navHover
+			box-shadow: 0 0 5px $navHover
+		&:hover
+			background-color: $navHover
+			box-shadow: 0 0 5px $navHover
+
+.nav-descktop	
+	position: fixed
+
+	display: none
+
+	width: 100%
+	max-width: 150px
+
+	right: 0
+	top: 50%
+	z-index: 30
+	transform: translateY(-50%)
+
+	padding-right: 15px
+	& li 
+		display: flex
+		justify-content: flex-end
+
+		position: relative
+
+		height: 25px
+
+		margin-bottom: 15px
+
+	&__link 
+		display: block
+
+		width: 15px
+		height: 100%
+
+		transition: 0.2s ease
+		cursor: pointer
+		border-radius: 10px
+		background-color: #46464f
+		box-shadow: 0 0 3px #fff inset
+		margin-bottom: 15px
+		&.active 
+			background-color: #fff
+			box-shadow: 0 0 3px #fff
+		&:hover 
+			background-color: #fff
+			box-shadow: 0 0 3px #fff
+		& span 
+			position: absolute
+			left: -15%
+			top: 50%
+			transform: translateY(-50%)
+
+			width: 150px
+
+			font-size: 15px
+			user-select: none
+			color: #fff
+			text-transform: capitalize
+			text-align: right
+
+			transition: 0.2s ease
+			padding-right: 25px
+			opacity: 0
+			pointer-events: none	
+		&:hover span 
+			opacity: 1	
+			pointer-events: all	
+		&.active span
+			opacity: 0.5
+			pointer-events: all
+			
+		
+		
+
+
+
+
+
+
+/* SECTION - CONTAINER */
+.section 
+	width: 100%
+
+	padding: 50px 0	
+	background-color: $backgroundColor
+
+.container
+	width: 100%
+	max-width: 560px
+
+	margin: 0 auto
+
+.title
+	text-transform: capitalize
+	text-align: center
+	font-size: 30px		
+	font-family: $fontProst
+	margin-bottom: 30px
+	
+.text
+	text-align: center	
+	padding: 0 15px
+	max-width: 560px
+	margin: 0 auto
+
+
+
+/* Information */
+
+.information
+
+	&__timetable
+		width: 100%
+
+		text-align: center
+		margin-bottom: 30px
+		& p 
+			text-transform: uppercase
+			font-size: 14px
+			& span
+				padding-left: 5px
+				font-size: 12px
+
+
+
+/* Gallery */
+.gallery 
+	max-width: none	
+
+	&__swiper 
+		overflow: hidden
+
+	&__wrapper 
+		margin-bottom: 30px
+
+	&__slide
+		width: 100%
+		position: relative
+		overflow: hidden
+		& img 
+			width: 100%
+			height: 100%
+			display: block
+		&::after
+			position: absolute
+			content: ''
+			top: 0
+			left: 0
+
+			width: 100%
+			height: 100%
+
+			background-color: rgba(0, 0, 0, 0.2)	
+
+.swiper-btns		
+	display: none
+
+	position: absolute
+	bottom: 0
+	left: 50%
+	transform: translateX(-50%)
+
+	.swiper-button-prev,
+	.swiper-button-next
+		position: static
+
+		width: 90px !important
+		height: 30px !important
+
+		display: flex
+		justify-content: center
+		align-items: center
+
+		text-transform: uppercase
+		font-family: $fontMont
+		font-size: 15px
+		font-weight: 200
+		color: $defaultColor
+		letter-spacing: 5px
+		cursor: pointer
+		user-select: none
+
+		transition: 0.2s ease
+		background-color: #0f111580
+		backdrop-filter: blur(3px)
+		-webkit-backdrop-filter: blur(3px)
+		box-shadow: 0 0 2px $boxShadow inset, 0 0 4px $boxShadow inset, 0 0 6px $boxShadow inset
+		border-radius: 5px
+		margin: 0 30px 0 0
+		&:hover
+			background-color: #ffffff80
+		&::after, ::before
+			content: none
+
+.pagination-container
+	width: 100%
+	display: flex
+	justify-content: flex-end
+
+	& .swiper-pagination
+		position: static !important
+		padding: 15px !important
+		transform: translate(0) !important
+		text-align: right !important
+		margin-right: 15px
+
+		& .swiper-pagination-bullet
+			width: 15px !important
+			height: 7px !important
+			border-radius: 5px !important
+			background: $boxShadow !important
+			box-shadow: 0 0 3px $defaultColor inset !important
+			opacity: 1 !important
+
+		& .swiper-pagination-bullet-active
+			background: $defaultColor !important
+			box-shadow: 0 0 3px $defaultColor !important
+
+
+
+/* Menu */	
+.menu
+
+	&__swiper 
+		overflow: hidden
+
+	&__wrapper 
+		margin-bottom: 30px
+
+	&__slide
+		text-align: center
+
+	&__title	
+		& h2
+			font-family: $fontProst
+			font-size: 30px
+			letter-spacing: 3px
+
+	&__list 
+		display: grid
+		gap: 35px
+		padding: 0 15px
+
+	&__head	
+		display: flex
+		justify-content: space-between
+		align-items: center
+		margin-bottom: 5px
+
+	&__body 
+		display: flex
+		text-align: left
+		text-transform: capitalize
+		& p 
+			text-align: justify
+			& span
+				text-transform: lowercase	
+
+	&__popup-background
+		position: fixed
+		z-index: 10
+		left: 0
+		top: 0
+
+		width: 100%
+		height: 100%
+
+		display: flex
+		justify-content: center
+		align-items: center
+
+		pointer-events: none
+		opacity: 0
+		transition: 0.2s ease
+
+		background-color: rgba(0, 0, 0, 0.7)
+		backdrop-filter: blur(3px)
+		-webkit-backdrop-filter: blur(3px)
+		&.active
+			opacity: 1
+			pointer-events: all
+
+	&__popup-img 
+		width: 290px
+		height: 290px
+		
+	&__image 
+		position: relative
+
+		width: 100%
+		height: 100%
+
+		display: none
+
+		border-radius: 10px
+		overflow: hidden
+		&.active 
+			display: block
+		& img 
+			width: 100%
+			height: 100%
+			object-fit: cover
+			display: block		
+		&::after
+			position: absolute
+			content: ''
+			top: 0
+			left: 0
+
+			width: 100%
+			height: 100%
+
+			background-color: rgba(0, 0, 0, 0.2)
+
+.dish-name
+	max-width: 155px
+	position: relative
+
+	text-transform: capitalize
+	font-size: 15px
+	text-align: left
+	cursor: pointer	
+
+.price 
+	position: relative
+	width: 60px
+	font-size: 15px
+	text-align: right
+	& sup
+		font-size: 11px
+
+.separator	
+	width: 40px	
+	display: flex
+	justify-content: space-between
+	opacity: 0.4
+
+.accessory:first-child
+	width: 6px
+	height: 6px
+
+	border-radius: 50%		
+	background: $boxShadow 
+	box-shadow: 0 0 3px $defaultColor inset 	
+
+.accessory:nth-child(2)
+	width: 8px
+	height: 8px
+	transform: rotate(45deg)
+
+	background: $boxShadow 
+	box-shadow: 0 0 3px $defaultColor inset 	
+
+.accessory:last-child
+	width: 6px
+	height: 6px
+
+	border-radius: 50%		
+	background: $boxShadow 
+	box-shadow: 0 0 3px $defaultColor inset 	
+
+
+
+/* Daily Special */
+.daily-special
+	user-select: none
+
+	&__text 
+		margin-bottom: 30px
+
+	&__swiper
+		overflow: hidden
+
+	&__slide 
+		position: relative 
+		
+		width: 100%
+		height: 300px !important
+		overflow: hidden
+		& img 
+			width: 100%
+			height: 100%
+			object-fit: cover
+			display: block
+		&::after
+			position: absolute
+			content: ''
+			top: 0
+			left: 0
+
+			width: 100%	
+			height: 100%
+
+			background-color: rgba(0, 0, 0, 0.2)
+
+	&__belonging
+		position: absolute
+		top: 0
+		left: 15px
+		z-index: 1
+
+		text-transform: uppercase
+		font-size: 12px
+		padding: 10px
+		border-radius: 0 0 5px 5px
+		background-color: rgba(0, 0, 0, 0.5)
+		backdrop-filter: blur(3px)
+		-webkit-backdrop-filter: blur(3px)
+
+	&__offer 
+		position: absolute
+		left: 0
+		bottom: 5px
+		z-index: 1
+
+		width: 80%
+		display: flex
+		justify-content: space-between
+		align-items: center
+
+		padding: 10px
+		border-radius: 0 5px 5px 0
+		background-color: rgba(0, 0, 0, 0.5)
+		backdrop-filter: blur(3px)
+		-webkit-backdrop-filter: blur(3px)
+
+		& .dish-name
+			cursor: default
+
+
+
+/* Footer */
+.footer-section
+	padding: 30px 0
+	border-top: 1px solid rgba(255, 255, 255, 0.1)
+
+	.footer	
+
+		&__numbers-block
+			max-width: 290px
+			display: flex
+			justify-content: space-between
+			align-items: center
+
+			padding: 0 15px
+			margin: 0 auto 30px
+
+		&__number 
+			width: 110px
+
+			transition: 0.2s ease
+			font-size: 12px	
+			&:first-child p
+				text-align: left
+			&:last-child p
+				text-align: right 
+			&:hover
+				opacity: 0.5
+
+		&__social 
+			max-width: 290px
+
+			display: flex
+			flex-wrap: wrap
+			justify-content: center
+			align-items: center
+
+			margin:  0 auto 20px 
+			padding: 0 15px
+
+		&__icon 
+			position: relative
+			justify-self: center
+			
+			width: 40px
+			height: 40px
+
+			margin: 0 10px 10px
+			cursor: pointer
+			& img 
+				position: absolute
+				top: 0
+				left: 0
+
+				width: 100%
+				height: 100%
+				display: block	
+				transition:  0.2s ease
+			& img:last-child
+				opacity: 0
+			&:hover img:first-child
+				opacity: 0
+			&:hover img:last-child
+				opacity: 1
+
+		&__text-block			
+			display: block
+			text-align: center
+
+			max-width: 640px
+
+			margin: 0 auto
+			padding: 0 15px
+
+			& .separator
+				display: none
+
+		&__text 
+			font-size: 14px
+				
+
+
+
+
+
+
+@media (min-width: 576px) 
+	/* Intro - главный экран */
+	.intro 
+
+		&__offer
+			max-width: 560px
+			padding: 0
+
+	/* Gallery */
+	.gallery 
+		max-width: 100%
+
+		& .pagination-container
+			max-width: 560px !important
+			margin: 0 auto
+
+		& .swiper-pagination
+			margin-right: 0	
+
+	/* Menu */
+	.menu
+
+		&__popup-img
+			width: 500px
+			height: 500px		
+
+	/* Daily Special */
+	.daily-special
+		max-width: 100%		
+
+	/* Footer */
+	.footer
+
+		&__social 
+			max-width: 560px !important
+
+		&__numbers-block
+			padding: 0 !important
+
+		&__text-block
+			display: flex !important
+			justify-content: space-between
+			align-items: center
+
+			& .separator
+				display: flex	!important
+
+		&__text 
+			width: 230px
+			&:first-child p 
+				text-align: right
+			&:last-child p 
+				text-align: left
+
+
+
+@media (min-width: 768px) 
+	/* Header */
+	.header
+
+		&__content 
+			padding: 15px 0
+
+		&__offer 
+			padding: 0
+
+	/* Container */
+	.container
+		max-width: 720px
+
+	.text
+		padding: 0
+
+	/* Gallery */
+	.gallery 
+		max-width: 100%
+
+		& .pagination-container
+			max-width: 720px !important
+
+	/* Menu */
+	.menu
+
+		&__list 
+			grid-template-columns: repeat(2, 1fr)		
+			padding: 0 !important
+
+
+	/* Daily Special */
+	.daily-special
+		max-width: 100%
+
+	/* Footer */
+	.footer	
+
+		&__social
+			padding: 0 !important
+
+		&__text-block
+			padding: 0 !important	
+
+
+
+@media (min-width: 992px) 
+	/* Header */
+	.header
+
+		&__content
+			justify-content: center
+
+		&__burger
+			display: none
+
+		&__logo	
+			font-size: 30px
+
+	.nav-descktop
+		display: block
+
+	/* Container */
+	.container
+		max-width: 960px		
+
+	.swiper-btns	
+		display: flex
+
+	/* Menu */
+	.menu
+
+		&__popup-background 
+			width: 700px
+			height: 700px
+
+			top: 50%
+			left: 50%
+			transform: translate(-50%, -50%)
+
+			transition: 0.4s ease
+			border-radius: 20px
+
+			&.active
+				opacity: 1
+				pointer-events: none 
+				
+
+	/* Daily Special */
+	.daily-special
+		max-width: 100%
+
+
+
+@media (min-width: 1200px) 
+	/* Section */
+	.section 
+		padding: 100px 0
+
+	/* Container */
+	.container
+		max-width: 1140px 
+
+	/* Daily Special */
+	.daily-special
+		max-width: 100%		
+
