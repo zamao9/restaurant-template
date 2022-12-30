@@ -60,35 +60,46 @@ document.addEventListener("DOMContentLoaded", () => {
 
   /* MENU popup */
   let body = document.getElementsByTagName("body"),
-    starter = document.querySelectorAll(".dish-name_starter"),
-    main = document.querySelectorAll(".dish-name_main"),
-    drinks = document.querySelectorAll(".dish-name_drinks"),
-    desserts = document.querySelectorAll(".dish-name_desserts"),
+    dish = document.querySelectorAll(".dish-name"),
     popupBg = document.querySelector(".menu__popup-background"),
-    starterImg = document.querySelectorAll(".menu__image_starter"),
-    mainImg = document.querySelectorAll(".menu__image_main"),
-    dessertsImg = document.querySelectorAll(".menu__image_desserts"),
-    drinksImg = document.querySelectorAll(".menu__image_drinks");
+    img = document.querySelectorAll(".menu__image");
   const popupFun = (dish, popup, img) => {
-    for (let i = 0; dish.length > i; ++i) {
-      dish[i].addEventListener("click", () => {
-        popup.classList.add("active");
-        body[0].classList.add("block");
-        for (let i = 0; img.length > i; ++i) {
-          img[i].classList.remove("active");
-        }
-        img[i].classList.add("active");
+    if (window.innerWidth < 992) {
+      for (let i = 0; dish.length > i; ++i) {
+        dish[i].addEventListener("click", () => {
+          popup.classList.add("active");
+          body[0].classList.add("block");
+          for (let i = 0; img.length > i; ++i) {
+            img[i].classList.remove("active");
+          }
+          img[i].classList.add("active");
+        });
+      }
+      popup.addEventListener("click", (event) => {
+        event.currentTarget.classList.remove("active");
+        body[0].classList.remove("block");
       });
+    } else {
+      for (let i = 0; dish.length > i; ++i) {
+        dish[i].addEventListener("mouseover", () => {
+          popup.classList.add("active");
+          body[0].classList.add("block");
+          for (let i = 0; img.length > i; ++i) {
+            img[i].classList.remove("active");
+          }
+          img[i].classList.add("active");
+        });
+        dish[i].addEventListener("mouseout", () => {
+          popup.classList.remove("active");
+          body[0].classList.remove("block");
+        });
+      }
     }
-    popup.addEventListener("click", (event) => {
-      event.currentTarget.classList.remove("active");
-      body[0].classList.remove("block");
-    });
   };
-  popupFun(starter, popupBg, starterImg);
-  popupFun(main, popupBg, mainImg);
-  popupFun(desserts, popupBg, dessertsImg);
-  popupFun(drinks, popupBg, drinksImg);
+  popupFun(dish, popupBg, img);
+  popupFun(dish, popupBg, img);
+  popupFun(dish, popupBg, img);
+  popupFun(dish, popupBg, img);
 
   /* Burger */
   const burgerFun = () => {
