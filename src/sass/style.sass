@@ -248,6 +248,74 @@ a
 			background-color: $navHover
 			box-shadow: 0 0 5px $navHover
 
+.nav-descktop	
+	position: fixed
+
+	display: none
+
+	width: 100%
+	max-width: 150px
+
+	right: 0
+	top: 50%
+	z-index: 30
+	transform: translateY(-50%)
+
+	padding-right: 15px
+	& li 
+		display: flex
+		justify-content: flex-end
+
+		position: relative
+
+		height: 25px
+
+		margin-bottom: 15px
+
+	&__link 
+		display: block
+
+		width: 15px
+		height: 100%
+
+		transition: 0.2s ease
+		cursor: pointer
+		border-radius: 10px
+		background-color: #46464f
+		box-shadow: 0 0 3px #fff inset
+		margin-bottom: 15px
+		&.active 
+			background-color: #fff
+			box-shadow: 0 0 3px #fff
+		&:hover 
+			background-color: #fff
+			box-shadow: 0 0 3px #fff
+		& span 
+			position: absolute
+			left: -15%
+			top: 50%
+			transform: translateY(-50%)
+
+			width: 150px
+
+			font-size: 15px
+			user-select: none
+			color: #fff
+			text-transform: capitalize
+			text-align: right
+
+			transition: 0.2s ease
+			padding-right: 25px
+			opacity: 0
+			pointer-events: none	
+		&:hover span 
+			opacity: 1	
+			pointer-events: all	
+		&.active span
+			opacity: 0.5
+			pointer-events: all
+			
+		
 		
 
 
@@ -491,7 +559,7 @@ a
 			background-color: rgba(0, 0, 0, 0.2)
 
 .dish-name
-	width: 155px
+	max-width: 155px
 	position: relative
 
 	text-transform: capitalize
@@ -626,11 +694,14 @@ a
 		&__number 
 			width: 110px
 
+			transition: 0.2s ease
 			font-size: 12px	
 			&:first-child p
 				text-align: left
 			&:last-child p
 				text-align: right 
+			&:hover
+				opacity: 0.5
 
 		&__social 
 			max-width: 290px
@@ -805,6 +876,9 @@ a
 		&__logo	
 			font-size: 30px
 
+	.nav-descktop
+		display: block
+
 	/* Container */
 	.container
 		max-width: 960px		
@@ -823,6 +897,7 @@ a
 			left: 50%
 			transform: translate(-50%, -50%)
 
+			transition: 0.4s ease
 			border-radius: 20px
 
 			&.active

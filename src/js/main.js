@@ -10,7 +10,6 @@ document.addEventListener("DOMContentLoaded", () => {
     },
     pagination: {
       el: ".gallery__pagination",
-      clickable: true,
       dynamicBullets: true,
       dynamicMainBullets: 2,
     },
@@ -27,7 +26,6 @@ document.addEventListener("DOMContentLoaded", () => {
     },
     pagination: {
       el: ".menu__pagination",
-      clickable: true,
       dynamicBullets: true,
       dynamicMainBullets: 2,
     },
@@ -62,7 +60,8 @@ document.addEventListener("DOMContentLoaded", () => {
   let body = document.getElementsByTagName("body"),
     dish = document.querySelectorAll(".dish-name"),
     popupBg = document.querySelector(".menu__popup-background"),
-    img = document.querySelectorAll(".menu__image");
+    img = document.querySelectorAll(".menu__image"),
+    lockPadding = document.querySelectorAll(".lock-padding");
   const popupFun = (dish, popup, img) => {
     if (window.innerWidth < 992) {
       for (let i = 0; dish.length > i; ++i) {
@@ -83,7 +82,6 @@ document.addEventListener("DOMContentLoaded", () => {
       for (let i = 0; dish.length > i; ++i) {
         dish[i].addEventListener("mouseover", () => {
           popup.classList.add("active");
-          body[0].classList.add("block");
           for (let i = 0; img.length > i; ++i) {
             img[i].classList.remove("active");
           }
@@ -91,7 +89,6 @@ document.addEventListener("DOMContentLoaded", () => {
         });
         dish[i].addEventListener("mouseout", () => {
           popup.classList.remove("active");
-          body[0].classList.remove("block");
         });
       }
     }
@@ -159,28 +156,38 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   /* Link active on scroll */
-  const navInit = () => {
-    const links = document.querySelectorAll(".nav__link"),
-      section = document.querySelectorAll(".section"),
-      header = document.querySelector(".header__head");
+  const links = document.querySelectorAll(".nav__link"),
+    descktopLinks = document.querySelectorAll(".nav-descktop__link"),
+    section = document.querySelectorAll(".section"),
+    header = document.querySelector(".header__head");
+  const navInit = (link, section, header) => {
     section.forEach((section) => {
       if (window.pageYOffset + header.offsetHeight >= section.offsetTop) {
-        links.forEach((link) => {
-          link.classList.remove("active");
-          if (link.dataset.section === section.dataset.section) {
-            link.classList.add("active");
+        link.forEach((li) => {
+          li.classList.remove("active");
+          if (li.dataset.section === section.dataset.section) {
+            li.classList.add("active");
           }
         });
       }
     });
   };
-  navInit();
+  navInit(links, section, header);
+  navInit(descktopLinks, section, header);
   window.addEventListener("scroll", () => {
-    navInit();
+    navInit(links, section, header);
+    navInit(descktopLinks, section, header);
   });
   window.addEventListener("resize", () => {
-    navInit();
+    navInit(links, section, header);
+    navInit(descktopLinks, section, header);
   });
+
+  /* Nav Descktop */
+  const linkHover = () => {
+    const link = document.querySelectorAll(".nav-descktop__link"),
+      span = document.querySelectorAll(".nav-descktop__span");
+  };
 });
 
 /* Scroll on click */

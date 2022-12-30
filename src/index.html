@@ -19,7 +19,7 @@
     <header class="section header" id="main" data-section="main">
       <div class="background"></div>
 
-      <div class="header__head">
+      <div class="header__head lock-padding">
         <div class="header__content">
           <a href="index.html" class="header__logo">Restaurant Name</a>
         </div>
@@ -76,6 +76,57 @@
               data-scroll="#daily-special"
               data-section="daily-special"
               >daily special</a
+            >
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Desktop version -->
+      <nav class="nav-descktop">
+        <ul>
+          <li>
+            <a
+              href="#"
+              class="nav-descktop__link"
+              data-scroll="#main"
+              data-section="main"
+              ><span>main</span></a
+            >
+          </li>
+          <li>
+            <a
+              href="#"
+              class="nav-descktop__link"
+              data-scroll="#information"
+              data-section="information"
+              ><span>information</span></a
+            >
+          </li>
+          <li>
+            <a
+              href="#"
+              class="nav-descktop__link"
+              data-scroll="#our-place"
+              data-section="our-place"
+              ><span>our place</span></a
+            >
+          </li>
+          <li>
+            <a
+              href="#"
+              class="nav-descktop__link"
+              data-scroll="#menu"
+              data-section="menu"
+              ><span>menu</span></a
+            >
+          </li>
+          <li>
+            <a
+              href="#"
+              class="nav-descktop__link"
+              data-scroll="#daily-special"
+              data-section="daily-special"
+              ><span>daily-special</span></a
             >
           </li>
         </ul>
@@ -142,7 +193,7 @@
     </section>
 
     <!-- Menu -->
-    <section class="section" id="menu" data-section="menu">
+    <section class="section" id="menu" data-section="menu" lock-padding>
       <div class="container menu">
         <div class="swiper menu__swiper">
           <div class="swiper-wrapper menu__wrapper">
@@ -533,7 +584,7 @@
       </div>
 
       <!-- Menu IMG -->
-      <div class="menu__popup-background">
+      <div class="menu__popup-background lock-padding">
         <div class="menu__popup-img">
           <!-- Starter IMG -->
           <div class="menu__image">
@@ -755,17 +806,17 @@
     <footer class="section footer-section">
       <div class="container footer">
         <div class="footer__numbers-block">
-          <div class="footer__number">
+          <a href="tel:+12321234567" class="footer__number">
             <p>1 232 123 4567</p>
-          </div>
+          </a>
           <div class="separator">
             <div class="accessory"></div>
             <div class="accessory"></div>
             <div class="accessory"></div>
           </div>
-          <div class="footer__number">
+          <a href="tel:+12321234567" class="footer__number">
             <p>1 232 123 4567</p>
-          </div>
+          </a>
         </div>
 
         <div class="footer__social">
