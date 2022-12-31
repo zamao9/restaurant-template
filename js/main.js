@@ -60,8 +60,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let body = document.getElementsByTagName("body"),
     dish = document.querySelectorAll(".dish-name"),
     popupBg = document.querySelector(".menu__popup-background"),
-    img = document.querySelectorAll(".menu__image"),
-    lockPadding = document.querySelectorAll(".lock-padding");
+    img = document.querySelectorAll(".menu__image");
   const popupFun = (dish, popup, img) => {
     if (window.innerWidth < 992) {
       for (let i = 0; dish.length > i; ++i) {
@@ -70,6 +69,7 @@ document.addEventListener("DOMContentLoaded", () => {
           body[0].classList.add("block");
           for (let i = 0; img.length > i; ++i) {
             img[i].classList.remove("active");
+            body[0].classList.remove("block");
           }
           img[i].classList.add("active");
           body[0].classList.add("block");
