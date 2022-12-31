@@ -72,6 +72,7 @@ document.addEventListener("DOMContentLoaded", () => {
             img[i].classList.remove("active");
           }
           img[i].classList.add("active");
+          body[0].classList.add("block");
         });
       }
       popup.addEventListener("click", (event) => {
