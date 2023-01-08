@@ -58,7 +58,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   /* MENU popup */
   let body = document.getElementsByTagName("body"),
-    dish = document.querySelectorAll(".dish-name"),
+    dish = document.querySelectorAll(".dish-name_menu"),
     popupBg = document.querySelector(".menu__popup-background"),
     img = document.querySelectorAll(".menu__image");
   const popupFun = (dish, popup, img) => {
