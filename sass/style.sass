@@ -604,6 +604,20 @@ a
 	background: $boxShadow 
 	box-shadow: 0 0 3px $defaultColor inset 	
 
+.blink
+	animation: blink 1s ease infinite
+	@keyframes blink
+		0%
+			opacity: 1
+			text-shadow: 0 0 3px #fff
+		50%	
+			opacity: 0.5
+			text-shadow: 0 0 0px #fff
+		100%
+			opacity: 1
+			text-shadow: 0 0 3px #fff
+			
+
 
 
 /* Daily Special */
