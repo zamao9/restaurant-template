@@ -741,6 +741,10 @@ body.block {
     transition: 0.2s ease;
 }
 
+.nav__item.active {
+    background-color: rgba(210, 214, 219, 0.2);
+}
+
 @media (min-width: 992px) {
     .section {
         padding: 100px 0;
@@ -789,15 +793,29 @@ body.block {
         opacity: 0;
         transition: 0.2s ease;
     }
-}
 
-@media (min-width: 992px) and (any-hover: hover) {
-    .nav__item a:hover {
+    .nav__item.active {
+        background-color: transparent;
+    }
+
+    .nav__item.active a {
         background-color: #d2d6db;
     }
 
-    .nav__item a:hover span {
+    .nav__item.active span {
         opacity: 1;
+        pointer-events: all;
+    }
+}
+
+@media (any-hover: hover) {
+    .nav__item:hover a {
+        background-color: #d2d6db;
+    }
+
+    .nav__item:hover a span {
+        opacity: 1;
+        pointer-events: all;
     }
 }
 

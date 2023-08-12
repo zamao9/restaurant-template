@@ -1,15 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" >
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>restaurant template</title>
-    <link rel="stylesheet" href="css/style.min.css" >
+    <link rel="stylesheet" href="css/style.min.css">
     <link
       rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
-    >
+      href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css">
   </head>
 
   <body class="body">
@@ -35,26 +34,26 @@
       <!-- Nav -->
       <nav class="nav">
         <ul class="nav__list">
-          <li class="nav__item">
-            <a><span>Home</span></a>
+          <li class="nav__item active" data-link="home" data-scroll="#home">
+            <a href="#"><span>Home</span></a>
           </li>
-          <li class="nav__item">
-            <a><span>Information</span></a>
+          <li class="nav__item" data-link="information" data-scroll="#information">
+            <a href="#"><span>Information</span></a>
           </li>
-          <li class="nav__item">
-            <a><span>Place</span></a>
+          <li class="nav__item" data-link="place" data-scroll="#place">
+            <a href="#"><span>Place</span></a>
           </li>
-          <li class="nav__item">
-            <a><span>Menu</span></a>
+          <li class="nav__item" data-link="menu" data-scroll="#menu">
+            <a href="#"><span>Menu</span></a>
           </li>
-          <li class="nav__item">
-            <a><span>Daily Special</span></a>
+          <li class="nav__item" data-link="daily" data-scroll="#daily">
+            <a href="#"><span>Daily Special</span></a>
           </li>
         </ul>
       </nav>
       <div class="popup"></div>
       <!-- Home -->
-<section class="section home">
+<section class="section home" data-section="home" id="home">
   <div class="container home__container">
     <div class="home__content">
       <h1 class="home__title title">Here will be&nbsp;some information</h1>
@@ -64,7 +63,7 @@
 
       <!-- Home End-->
       <!-- Information -->
-<section class="section information">
+<section class="section information" data-section="information" id="information">
   <div class="container information__container">
     <div class="schedule mb30">
       <span class="schedule__day">mon—fri : <span>10:00 - 00:00</span></span>
@@ -87,8 +86,8 @@
 </section>
 
       <!-- Information End-->
-      <!-- Place -->
-<section class="section place">
+      <!-- Place --> 
+<section class="section place" data-section="place" id="place">
   <div class="container place__container">
     <h2 class="place__title title mb30">Our Place</h2>
 
@@ -107,98 +106,98 @@
             src="images/place/1.jpg"
             alt="place image 1"
             data-swiper-parallax="50%"
-          >
+          />
         </div>
         <div class="swiper-slide place-slider__slide">
           <img
             src="images/place/2.jpg"
             alt="place image 2"
             data-swiper-parallax="50%"
-          >
+          />
         </div>
         <div class="swiper-slide place-slider__slide">
           <img
             src="images/place/3.jpg"
             alt="place image 3"
             data-swiper-parallax="50%"
-          >
+          />
         </div>
         <div class="swiper-slide place-slider__slide">
           <img
             src="images/place/4.jpg"
             alt="place image 4"
             data-swiper-parallax="50%"
-          >
+          />
         </div>
         <div class="swiper-slide place-slider__slide">
           <img
             src="images/place/5.jpg"
             alt="place image 5"
             data-swiper-parallax="50%"
-          >
+          />
         </div>
         <div class="swiper-slide place-slider__slide">
           <img
             src="images/place/6.jpg"
             alt="place image 6"
             data-swiper-parallax="50%"
-          >
+          />
         </div>
         <div class="swiper-slide place-slider__slide">
           <img
             src="images/place/7.jpg"
             alt="place image 7"
             data-swiper-parallax="50%"
-          >
+          />
         </div>
         <div class="swiper-slide place-slider__slide">
           <img
             src="images/place/8.jpg"
             alt="place image 8"
             data-swiper-parallax="50%"
-          >
+          />
         </div>
         <div class="swiper-slide place-slider__slide">
           <img
             src="images/place/9.jpg"
             alt="place image 9"
             data-swiper-parallax="50%"
-          >
+          />
         </div>
         <div class="swiper-slide place-slider__slide">
           <img
             src="images/place/10.jpg"
             alt="place image 10"
             data-swiper-parallax="50%"
-          >
+          />
         </div>
         <div class="swiper-slide place-slider__slide">
           <img
             src="images/place/11.jpg"
             alt="place image 11"
             data-swiper-parallax="50%"
-          >
+          />
         </div>
         <div class="swiper-slide place-slider__slide">
           <img
             src="images/place/12.jpg"
             alt="place image 12"
             data-swiper-parallax="50%"
-          >
+          />
         </div>
         <div class="swiper-slide place-slider__slide">
           <img
             src="images/place/13.jpg"
             alt="place image 13"
             data-swiper-parallax="50%"
-          >
+          />
         </div>
         <div class="swiper-slide place-slider__slide">
           <img
             src="images/place/14.jpg"
             alt="place image 14"
             data-swiper-parallax="50%"
-          >
+          />
         </div>
       </div>
 
@@ -216,7 +215,7 @@
 
       <!-- Place End-->
       <!-- Menu -->
-<section class="section menu">
+<section class="section menu" data-section="menu" id="menu">
   <!-- Menu Popup -->
   <div class="menu__popup">
     <img
@@ -224,7 +223,7 @@
       alt="Popup image"
       class="menu__image"
       aria-hidden="true"
-    >
+    />
   </div>
 
   <div class="container menu__container">
@@ -580,7 +579,7 @@
 
       <!-- Menu End-->
       <!-- Daily Special -->
-<section class="section daily-special">
+<section class="section daily-special" data-section="daily" id="daily">
   <div class="container daily-special__container">
     <h2 class="daily-special__title title mb30">Daily Special</h2>
 
@@ -600,7 +599,7 @@
             src="./images/background.jpg"
             alt="daily special image 1"
             data-swiper-parallax="50%"
-          >
+          />
           <span class="daily-slide__mark">Main</span>
           <div class="daily-slide__description">
             <div class="menu-item-header daily-special__header">
@@ -615,7 +614,7 @@
             src="./images/background.jpg"
             alt="daily special image 2"
             data-swiper-parallax="50%"
-          >
+          />
           <span class="daily-slide__mark">Main</span>
           <div class="daily-slide__description">
             <div class="menu-item-header daily-special__header">
@@ -630,7 +629,7 @@
             src="./images/background.jpg"
             alt="daily special image 3"
             data-swiper-parallax="50%"
-          >
+          />
           <span class="daily-slide__mark">Main</span>
           <div class="daily-slide__description">
             <div class="menu-item-header daily-special__header">
@@ -645,7 +644,7 @@
             src="./images/background.jpg"
             alt="daily special image 4"
             data-swiper-parallax="50%"
-          >
+          />
           <span class="daily-slide__mark">Desserts</span>
           <div class="daily-slide__description">
             <div class="menu-item-header daily-special__header">
@@ -660,7 +659,7 @@
             src="./images/background.jpg"
             alt="daily special image 5"
             data-swiper-parallax="50%"
-          >
+          />
           <span class="daily-slide__mark">Deeserts</span>
           <div class="daily-slide__description">
             <div class="menu-item-header daily-special__header">
@@ -675,7 +674,7 @@
             src="./images/background.jpg"
             alt="daily special image 6"
             data-swiper-parallax="50%"
-          >
+          />
           <span class="daily-slide__mark">Main</span>
           <div class="daily-slide__description">
             <div class="menu-item-header daily-special__header">
@@ -690,7 +689,7 @@
             src="./images/background.jpg"
             alt="daily special image 7"
             data-swiper-parallax="50%"
-          >
+          />
           <span class="daily-slide__mark">Main</span>
           <div class="daily-slide__description">
             <div class="menu-item-header daily-special__header">
@@ -799,6 +798,7 @@
 </footer>
 
     <!-- Footer End -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
     <script src="js/main.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
   </body>
