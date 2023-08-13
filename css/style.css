@@ -758,12 +758,17 @@ body.block {
 
     .nav {
         top: 50%;
-        right: 20px;
+        right: 0;
         transform: translateY(-50%);
         width: -moz-fit-content;
         width: fit-content;
         height: auto;
+        padding-right: 30px;
         background-color: transparent;
+    }
+
+    .nav__list {
+        width: auto;
     }
 
     .nav__item {

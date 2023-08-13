@@ -40,6 +40,32 @@ document.addEventListener('DOMContentLoaded', () => {
       nav.classList.toggle('active');
       body[0].classList.toggle('block');
     });
+
+    /* Nav Links Active On Click
+    ========================================================================== */
+    for (let i = 0; navLink.length > i; ++i) {
+      navLink[i].addEventListener('click', (e) => {
+        for (let i = 0; navLink.length > i; ++i) {
+          navLink[i].classList.remove('active');
+          if (window.innerWidth < 992) {
+            nav.classList.remove('active');
+            popup.classList.remove('active');
+            burgerVisible.classList.remove('active');
+            burgerHiden.classList.remove('active');
+            body[0].classList.remove('block');
+            headerLogo.classList.remove('active');
+            if (window.scrollY >= 1) {
+              header.classList.add('active');
+              header.classList.remove('hide');
+            } else if (window.scrollY < 1) {
+              header.classList.remove('active');
+              header.classList.remove('hide');
+            }
+          }
+        }
+        navLink[i].classList.add('active');
+      });
+    }
   };
   burgerOpen();
 
@@ -66,38 +92,6 @@ document.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('onload', () => {
     headerActive();
   });
-
-  /* Nav Links Active On Click
-    ========================================================================== */
-  const navActiveOnClick = () => {
-    for (let i = 0; navLink.length > i; ++i) {
-      navLink[i].addEventListener('click', (e) => {
-        for (let i = 0; navLink.length > i; ++i) {
-          navLink[i].classList.remove('active');
-          if (window.innerWidth < 992) {
-            nav.classList.remove('active');
-            popup.classList.remove('active');
-            burgerVisible.classList.remove('active');
-            burgerHiden.classList.remove('active');
-            body[0].classList.remove('block');
-            headerLogo.classList.remove('active');
-            if (window.scrollY >= 1) {
-              header.classList.add('active');
-              header.classList.remove('hide');
-            } else if (window.scrollY < 1) {
-              header.classList.remove('active');
-              header.classList.remove('hide');
-            }
-          }
-        }
-        navLink[i].classList.add('active');
-        window.scrollTo({
-          top: window.pageYOffset + header.offsetHeight,
-        });
-      });
-    }
-  };
-  navActiveOnClick();
 
   /* Nav Links Active On Scroll
     ========================================================================== */
@@ -182,10 +176,10 @@ document.addEventListener('DOMContentLoaded', () => {
       menuTitle[i].addEventListener('click', () => {
         popup.classList.add('active');
         popup.style.zIndex = '19';
-        nav.style.display = 'none';
         menuPopup.classList.add('active');
         body[0].classList.add('block');
         body[0].style.paddingRight = paddingScrollbar;
+        nav.style.display = 'none';
         menuImage.src = menuData[i].img;
       });
     }
@@ -194,7 +188,6 @@ document.addEventListener('DOMContentLoaded', () => {
       e.currentTarget.classList.remove('active');
       menuPopup.classList.remove('active');
       nav.classList.remove('active');
-      nav.style.display = 'flex';
       burger.classList.remove('active');
       burgerVisible.classList.remove('active');
       burgerHiden.classList.remove('active');
@@ -209,6 +202,7 @@ document.addEventListener('DOMContentLoaded', () => {
       headerLogo.classList.remove('active');
       body[0].classList.remove('block');
       body[0].style.paddingRight = '0';
+      nav.style.display = 'flex';
     });
   };
   menuImageShow();
@@ -344,7 +338,6 @@ document.addEventListener('DOMContentLoaded', () => {
   dailyImagesShow();
 });
 
-
 /* Scroll On Click */
 $(function () {
   $('[data-scroll').click(function (event) {
@@ -353,7 +346,7 @@ $(function () {
     let blockId = $(this).data('scroll'),
       header = document.querySelector('.header');
 
-    if ($(window).width() < 1024) {
+    if ($(window).width() < 992) {
       let blockOffset = $(blockId).offset().top - header.offsetHeight;
 
       $('html, body').animate(
